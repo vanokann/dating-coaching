@@ -105,6 +105,24 @@
             font-size: clamp(1.2rem, 3vw, 1.5rem);
         }
 
+        /* Restored Badge Styles */
+        .badge { 
+            background: var(--secondary); 
+            color: var(--primary); 
+            padding: 3px 8px; 
+            border-radius: 3px; 
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .save-amount {
+            color: #AAA; 
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
         @media (max-width: 480px) {
             .container {
                 padding: 15px;
@@ -113,12 +131,21 @@
             input[type="datetime-local"] {
                 min-height: 44px;
             }
+            
+            .badge {
+                font-size: 10px;
+                padding: 2px 6px;
+            }
         }
 
         /* iOS specific fixes */
         @supports (-webkit-touch-callout: none) {
             input, button {
                 transform: translateZ(0);
+            }
+            
+            .badge {
+                -webkit-font-smoothing: antialiased;
             }
         }
 
@@ -157,14 +184,14 @@
             <h2><i class="fas fa-chess-queen"></i> Grandmaster 1:1 Coaching</h2>
             <p>40-min Dating Strategy Sessions - Save With Packages:</p>
 
-            <div class="session-option">
+            <div style="margin: 20px 0;">
                 <h3>Single Session <span class="badge">Trial</span></h3>
                 <div class="price">$97</div>
                 <input type="datetime-local" required>
                 <button>Book Single Session</button>
             </div>
 
-            <div class="session-option popular">
+            <div style="margin: 30px 0;">
                 <h3>2 Sessions/Month <span class="badge">Most Popular</span></h3>
                 <div class="price">$87/session <span class="per-session">($174 total)</span></div>
                 <div class="save-amount">Save $20 monthly</div>
@@ -172,7 +199,7 @@
                 <button>Save 10% <i class="fas fa-calendar-check"></i></button>
             </div>
 
-            <div class="session-option best-value">
+            <div style="margin: 20px 0;">
                 <h3>4 Sessions/Month <span class="badge">Best Value</span></h3>
                 <div class="price">$77/session <span class="per-session">($308 total)</span></div>
                 <div class="save-amount">Save $80 monthly</div>
