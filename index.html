@@ -12,7 +12,7 @@
             --accent: #E31B5F; 
             --container-width: min(800px, 90%);
         }
-        
+
         body { 
             font-family: -apple-system, BlinkMacSystemFont, 'Arial', sans-serif; 
             margin: 0; 
@@ -33,7 +33,7 @@
             opacity: 0.15;
             z-index: -1;
             background-image: url('https://cdn-icons-png.flaticon.com/512/2583/2583344.png'), 
-                          url('https://cdn-icons-png.flaticon.com/512/2583/2583319.png');
+                              url('https://cdn-icons-png.flaticon.com/512/2583/2583319.png');
             background-size: 200px, 180px;
             background-position: 90% 20%, 10% 80%;
             background-repeat: no-repeat;
@@ -66,6 +66,15 @@
             color: var(--secondary); 
             font-size: clamp(1.75rem, 6vw, 2rem); 
             margin: 10px 0;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .old-price {
+            color: #808080; 
+            text-decoration: line-through;
+            font-size: 1.25rem; /* Increase the size for closer alignment */
+            margin-left: 5px; /* Closer spacing */
         }
 
         input, button { 
@@ -105,7 +114,6 @@
             font-size: clamp(1.2rem, 3vw, 1.5rem);
         }
 
-        /* Restored Badge Styles */
         .badge { 
             background: var(--secondary); 
             color: var(--primary); 
@@ -123,6 +131,24 @@
             margin: 5px 0;
         }
 
+        .small-grey {
+            color: #808080;
+            font-size: 0.875rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.875rem;
+            color: #AAA;
+        }
+
+        footer small {
+            display: block;
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
         @media (max-width: 480px) {
             .container {
                 padding: 15px;
@@ -138,7 +164,6 @@
             }
         }
 
-        /* iOS specific fixes */
         @supports (-webkit-touch-callout: none) {
             input, button {
                 transform: translateZ(0);
@@ -149,7 +174,6 @@
             }
         }
 
-        /* Android Chrome fix */
         @media (-webkit-device-pixel-ratio: 1.5) {
             .card {
                 backdrop-filter: blur(8px);
@@ -164,47 +188,45 @@
             <span style="font-size: clamp(1rem, 3vw, 1.125rem); color: var(--secondary);">Strategic Dating Coaching</span>
         </h1>
 
-        <!-- Free Guide -->
+        <!-- Free Guide (Redirect to Gumroad) -->
         <div class="card">
             <h2><i class="fas fa-book-open"></i> Get your FREE Dating guide </h2>
-            <input type="email" placeholder="Your email address..." required>
-            <button>Get Instant Access → </button>
+            <p>Get instant access to my dating strategy guide.</p>
+            <button onclick="window.location.href='https://gumroad.com/l/your-guide-link';">Get it now → </button>
         </div>
 
-        <!-- Dating Course -->
+        <!-- Dating Course (Redirect to Gumroad) -->
         <div class="card">
             <h2><i class="fas fa-chess-board"></i> Checkmate Dating Course</h2>
-            <div class="price">$49 <span style="font-size: 0.875rem; color: #AAA; text-decoration: line-through;">$149</span></div>
-            <p>Includes 15-min Dating Strategy Call</p>
-            <button>Enroll Now <i class="fas fa-lock"></i></button>
+            <div class="price">$49 <span class="old-price">$149</span></div>
+            <p>Includes 15-min dating strategy call</p>
+            <p style="font-size: 0.85rem; color: #AAA;">14-day money-back guarantee</p>
+            <button onclick="window.location.href='https://gumroad.com/l/your-course-link';">Enroll Now <i class="fas fa-lock"></i></button>
         </div>
 
-        <!-- 1-on-1 Coaching -->
+        <!-- 1-on-1 Coaching (Redirect to Google Calendar) -->
         <div class="card">
             <h2><i class="fas fa-chess-queen"></i> Grandmaster 1:1 Coaching</h2>
-            <p>40-min Dating Strategy Sessions - Save With Packages:</p>
+            <p>45-min Dating Strategy Sessions - Save With Packages:</p>
 
             <div style="margin: 20px 0;">
                 <h3>Single Session <span class="badge">Trial</span></h3>
                 <div class="price">$97</div>
-                <input type="datetime-local" required>
-                <button>Book Single Session</button>
+                <button onclick="window.location.href='https://calendar.google.com';">Book Single Session</button>
             </div>
 
             <div style="margin: 30px 0;">
                 <h3>2 Sessions/Month <span class="badge">Most Popular</span></h3>
-                <div class="price">$87/session <span class="per-session">($174 total)</span></div>
+                <div class="price">$87/session <span class="small-grey">($174 total)</span></div>
                 <div class="save-amount">Save $20 monthly</div>
-                <input type="datetime-local" required>
-                <button>Save 10% <i class="fas fa-calendar-check"></i></button>
+                <button onclick="window.location.href='https://calendar.google.com';">Save 10% <i class="fas fa-calendar-check"></i></button>
             </div>
 
             <div style="margin: 20px 0;">
                 <h3>4 Sessions/Month <span class="badge">Best Value</span></h3>
-                <div class="price">$77/session <span class="per-session">($308 total)</span></div>
+                <div class="price">$77/session <span class="small-grey">($308 total)</span></div>
                 <div class="save-amount">Save $80 monthly</div>
-                <input type="datetime-local" required>
-                <button>Save 20% <i class="fas fa-trophy"></i></button>
+                <button onclick="window.location.href='https://calendar.google.com';">Save 20% <i class="fas fa-trophy"></i></button>
             </div>
         </div>
 
@@ -215,3 +237,4 @@
     </div>
 </body>
 </html>
+
